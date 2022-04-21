@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Poppins', sans-serif;
+    background-color: #575ca1;
+    padding: 20px;
+    font-size: 20px;
+    color: #151515;
+}
+
+.container{
+    max-width: 960px; 
+    margin: 0 auto; 
+    padding: 12px;
+}
+.navbar{
+    display: flex;
+    flex-wrap: wrap; 
+    align-items: center; 
+    justify-content: space-between; 
+    background-color: #fff;
+    padding-block: 15px; 
+}
+.navbar a{
+    text-decoration: none;
+    color: inherit; 
+}
+.logo{
+    margin-right: 50px;
+}
+.list{
+    list-style: none;
+    display: flex;
+    gap: 50px; 
+}
+#toggler,
+.navbar label{
+    display: none;
+}
+
+@media screen and 
+(max-width: 600px){
+    .menu{
+        width: 100%;
+        max-height: 0; 
+        overflow: hidden; 
+    }
+    .list{
+        flex-direction: column; 
+        align-items: center;
+        padding: 20px;
+    }
+    .navbar label{
+        display: inline-flex; 
+        align-items: center;
+        cursor: pointer;
+    }
+    
+    #toggler:checked ~ .menu{
+        max-height: 100%;
+    }
+}
+
+/*Efeito scroll*/
+.mouse {
+    width: 25px;
+    height: 50px;
+    border: 2px solid #fff;
+    border-radius: 20px;
+    display: flex;
+    position: absolute; /*posição fixa em relação a página*/
+    bottom: 10px; /*posição a partir da parte inferior*/
+    right: 10px; /*posição a partir da direita*/
+}
+.mouse-wheel{
+    display: block;
+    width: 10px;
+    height: 10px;
+    background-color: #fff;
+    border-radius: 50%;
+    margin: auto;
+    animation: move-wheel 1s linear infinite;
+}
+@keyframes move-wheel {
+    0% {
+        opacity: 0;
+        transform: translateY(-1rem);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(1rem);
+    }
+}
+
+/*Efeito do botão*/
+.button{
+    width: 70px;
+    height: 50px;
+    border-radius: 45px;
+    font-size: 15px;
+    font-weight: 900;
+    background: #000;
+    color: #fff;
+    border: 1px solid;
+    transition: 1s all;
+    border: 4px solid lightblue;
+    transition-delay: 0.2s;
+    cursor: pointer;
+}
+
+.button:hover{
+    box-shadow: 0 0 20px #a8eb12,0 0 40px #00e486;
+    border: 4px solid #a8eb12;
+    background: #a8eb12;
+    color: #000;
+    transition: box-shadow 7s, border 3s, background 1s, color 1s;
+}
